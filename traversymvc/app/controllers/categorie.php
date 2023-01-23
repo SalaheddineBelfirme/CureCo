@@ -24,7 +24,9 @@ class categorie extends Controller {
 
     public function getcategorie(){
       $ct=new categorieM();
-     return $ct->getcategory();
+    $data= $ct->getcategory();
+     header('Content-Type: application/json');
+     echo  json_encode($data); 
 
     }
     public function getoneproudct($id){

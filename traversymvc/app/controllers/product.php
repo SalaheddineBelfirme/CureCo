@@ -24,6 +24,7 @@ class product extends Controller
     header('Content-Type: application/json');
     echo  json_encode($pr);
   }
+  
 
   public function edit()
   {
@@ -53,8 +54,10 @@ class product extends Controller
   {
 
     if (isset($_POST['submitadd'])) {
+
       $product = new productM();
       $prix = $_POST['prix'];
+      $libelle = $_POST['libelle'];
       $category = $_POST['category'];
       $name = $_POST['name'];
       $FileName = $_FILES['imageadd']['name'];
@@ -63,7 +66,7 @@ class product extends Controller
       $newImageName = uniqid();
       $newImageName .= '.' . $imageEx;
       move_uploaded_file($_FILES['imageadd']['tmp_name'], '../public/imgg/' . $newImageName);
-      $bol = $product->addprudct($category, $newImageName, $name, $prix);
+      $bol = $product->addprudct($category, $newImageName, $name, $prix,$libelle);
       if ($bol == true) {
 
         header("Location: http://localhost/CureCoj/traversymvc/pages/dashboard");

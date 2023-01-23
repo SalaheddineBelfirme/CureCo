@@ -4,7 +4,35 @@
 // const navbar = document.querySelector(".header .navbar");
 
 
+function AddNewProdct(){
+ 
 
+
+ let  modle=document.getElementById("modleadd")
+ let  NbProudct=document.getElementById("nbprodct")
+//  console.log(NbProudct);
+
+
+let nb=parseInt(NbProudct.value) +1
+
+NbProudct.value=nb;
+ modle.insertAdjacentHTML('afterend', `<h1 class="modal-title fs-5" id="exampleModalLabel  "> Product`+nb+` </h1>
+   <input name="name`+nb+`" type="text" class="form-control" placeholder="name`+nb+`" aria-label="Username"
+              aria-describedby="basic-addon1" required>
+          <input name="libelle" type="text" class="form-control" placeholder="libelle" aria-label="Username"
+              aria-describedby="basic-addon1">
+          <input name="prix`+nb+`" type="text" class="form-control" placeholder="prix`+nb+`"
+              aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+          <input accept=".jpg,jpeg,.png" name="imageadd`+nb+`" type="file" class="form-control" required>
+          <select name="category`+nb+`" class="form-select" aria-label="Default select example" required>
+              <option selected>Categorie </option>
+              <?php foreach ($data['categorie'] as $row) { ?>
+              <option value="<?php echo $row->id_c ?>"><?php echo $row->name_categorie ?></option>
+              <?php } ?>
+          </select>`);
+
+
+ }
 
 function validateEmail(email) {
     let res =/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
@@ -19,13 +47,10 @@ function validateEmail(email) {
 
     function validatePassword(password) {
         let res = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-        if(res.test(password)){
-            
-        }
-        else{
+     
            
-        }
-        return res.test(number)
+        
+        return res.test(password)
         }
 
         function validatetext(number) {

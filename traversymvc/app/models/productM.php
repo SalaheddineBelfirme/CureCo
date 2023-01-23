@@ -39,14 +39,17 @@
     }
 
       
-    public function addprudct($id_category,$image,$name ,$prix ){
+    public function addprudct($id_category,$image,$name ,$prix,$libelle ){
+      $date= date("Y/m/d") ;
 
-          $sql= "INSERT INTO `prodcts`(`prix`, `image`, `name`, `id_category`) VALUES (:prix,:image,:name,:id_category)";
+          $sql= "INSERT INTO `prodcts`(`prix`, `image`, `name`, `id_category`,`date_dajout`,`libelle`) VALUES (:prix,:image,:name,:id_category,:date_dajout,:libelle)";
             $stmt=$this->db->query($sql);
             $stmt->bindValue(':image',$image,PDO::PARAM_STR);
             $stmt->bindValue(':id_category',$id_category,PDO::PARAM_INT);
             $stmt->bindValue(':name',$name,PDO::PARAM_STR);
             $stmt->bindValue(':prix',$prix,PDO::PARAM_STR); 
+            $stmt->bindValue(':date_dajout',$date,PDO::PARAM_STR); 
+            $stmt->bindValue(':libelle',$libelle,PDO::PARAM_STR); 
             $stmt->execute();
           
             if ($stmt->rowCount() > 0) {
