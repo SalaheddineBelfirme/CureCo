@@ -33,6 +33,7 @@ class login extends Controller {
             
        }
       elseif($r[0]->role==1){
+       
         $name=$r[0]->name;
             echo("<script> var na='  $name'; alert('welcome Admin  '+na)</script>");
             
@@ -40,14 +41,14 @@ class login extends Controller {
             
        }
 
-       elseif($r[0]->role==0) {
-        $name=$r[0]->Nom;
-        echo("<script> var na='  $name'; alert('welcome Sir  '+na)</script>");
-        echo $r[0]->role;
-        die;
-        header("Location: http://localhost/CureCoj/traversymvc/pages/croisiere");
+    //    elseif($r[0]->role==0) {
+    //     $name=$r[0]->Nom;
+    //     echo("<script> var na='  $name'; alert('welcome Sir  '+na)</script>");
+    //     echo $r[0]->role;
+    //     die;
+    //     header("Location: http://localhost/CureCoj/traversymvc/pages/croisiere");
 
-       }
+    //    }
        
 
     }

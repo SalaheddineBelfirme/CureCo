@@ -6,7 +6,13 @@
        $this->db = new Database;
     }
 
-
+    public function trie( $by, $order )
+    {
+        $sql = 'SELECT * FROM `categorie` ,prodcts WHERE categorie.id_c=prodcts.id_category ORDER BY prodcts.' . $by . ' ' . $order;
+        $stmt= $this->db->query($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
     public function getallprodact (){
       $qury="SELECT * FROM `categorie` ,prodcts WHERE categorie.id_c=prodcts.id_category";
       $stmt= $this->db->query($qury);
@@ -37,7 +43,13 @@
         }
         else return false;
     }
+    public function rechrechproudct($words){
 
+      $stmt= $this->db->query("SELECT * FROM `categorie` ,prodcts WHERE categorie.id_c=prodcts.id_category and leble like %$words%");
+      $stmt->execute();
+     
+      return $stmt->fetchAll(PDO::FETCH_OBJ);
+}
       
     public function addprudct($id_category,$image,$name ,$prix,$libelle ){
       $date= date("Y/m/d") ;

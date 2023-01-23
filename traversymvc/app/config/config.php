@@ -10,4 +10,4 @@
   // URL Rootx
   define('URLROOT', 'http://localhost/CureCoj/traversymvc');
   // Site Name
-  define('SITENAME', ' shipcruisetour');
+  define('SITENAME', 'CureCo ');

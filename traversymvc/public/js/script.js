@@ -5,34 +5,57 @@
 
 
 function AddNewProdct(){
- 
 
+ 
 
  let  modle=document.getElementById("modleadd")
  let  NbProudct=document.getElementById("nbprodct")
-//  console.log(NbProudct);
+ console.log(NbProudct);
 
 
 let nb=parseInt(NbProudct.value) +1
-
-NbProudct.value=nb;
- modle.insertAdjacentHTML('afterend', `<h1 class="modal-title fs-5" id="exampleModalLabel  "> Product`+nb+` </h1>
-   <input name="name`+nb+`" type="text" class="form-control" placeholder="name`+nb+`" aria-label="Username"
-              aria-describedby="basic-addon1" required>
-          <input name="libelle" type="text" class="form-control" placeholder="libelle" aria-label="Username"
-              aria-describedby="basic-addon1">
-          <input name="prix`+nb+`" type="text" class="form-control" placeholder="prix`+nb+`"
-              aria-label="Recipient's username" aria-describedby="basic-addon2" required>
-          <input accept=".jpg,jpeg,.png" name="imageadd`+nb+`" type="file" class="form-control" required>
-          <select name="category`+nb+`" class="form-select" aria-label="Default select example" required>
-              <option selected>Categorie </option>
-              <?php foreach ($data['categorie'] as $row) { ?>
-              <option value="<?php echo $row->id_c ?>"><?php echo $row->name_categorie ?></option>
-              <?php } ?>
-          </select>`);
-
+$.ajax({
+  type: "GET",
+  url: "http://localhost/CureCoj/traversymvc/categorie/getcategorie/",   
+  dataType: "json",
+  
+  success: function(result) {
+ 
+    localStorage.setItem("data", JSON.stringify(result));
+      
+   },
+  error : function(result) {
+   
+  
+    console.log("erure");
 
  }
+ 
+  
+})
+a=JSON.parse(localStorage.getItem("data"));
+var inputs=`<h1 class="modal-title fs-5" id="exampleModalLabel  "> Product`+nb+` </h1>
+<input name="name[]" type="text" class="form-control" placeholder="name`+nb+`" aria-label="Username"
+           aria-describedby="basic-addon1" required>
+       <input name="libelle[]" type="text" class="form-control" placeholder="libelle" aria-label="Username"
+           aria-describedby="basic-addon1">
+       <input name="prix[]" type="text" class="form-control" placeholder="prix`+nb+`"
+           aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+       <input accept=".jpg,jpeg,.png" name="imageadd[]" type="file" class="form-control" required>`
+
+           var select ="<select name='category[]' class='form-select' aria-label='Default select example' required>"
+for (let i = 0; i < a.length; i++) {
+  var option ="<option value='"+a[i].id_c+"' selected>"+a[i].name_categorie+" </option>"
+  select+=option
+}
+select+='</select>'
+inputs+=select;
+console.log(inputs)
+NbProudct.value=nb;
+ modle.insertAdjacentHTML('afterend', inputs);
+ }
+
+ 
 
 function validateEmail(email) {
     let res =/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
@@ -67,7 +90,7 @@ function validateEmail(email) {
         let email = $("#emaillog").val();
         let password = $("#paswordlog").val();
         event.preventDefault();
-        console.log()
+  
         let bol=true;
 
         erremail.text("");
@@ -82,11 +105,11 @@ function validateEmail(email) {
 
         errpassword.text("");
         if(validatePassword(password)) {
-          errpassword.text(password + " is valid");
+          errpassword.text(  "password  is valid");
           errpassword.css("color", "blue");
           
         } else {
-          errpassword.text(password + " is not valid");
+          errpassword.text( " password is not valid");
           errpassword.css("color", "red");
           bol=false;
         }

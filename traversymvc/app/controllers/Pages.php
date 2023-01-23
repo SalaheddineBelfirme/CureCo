@@ -94,14 +94,7 @@ session_start();
 
 
 
-    public function add_port(){
-      $data = [
-        'title' => 'add_port'
-      ];
-
-      $this->view('pages/add_port', $data);
-    }
-
+ 
 
     public function dashboard(){
      if(isset($_SESSION['log'])){
