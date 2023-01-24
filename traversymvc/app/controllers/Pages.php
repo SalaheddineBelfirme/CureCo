@@ -72,13 +72,6 @@ session_start();
       $this->view('pages/login');
     }
 
-    public function signin(){
-      $data = [
-        'title' => 'signin Us'
-      ];
-
-      $this->view('pages/signin', $data);
-    }
 
     public function contact(){
       $data = [
@@ -88,7 +81,20 @@ session_start();
       $this->view('pages/contact', $data);
     }
 
- 
+    public function statistique (){
+     $nbproudct= $this->postModel->NbProudct();
+     $MaxPrix= $this->postModel->maxprix();
+     $minprix= $this->postModel->minprix();
+     $TotalPrix= $this->postModel->totalprix();
+
+      $data = [ 
+        'nbproudct' => $nbproudct,
+        'MaxPrix'=>$MaxPrix,
+        'minprix'=>$minprix,
+        'TotalPrix'=>$TotalPrix
+      ];
+      
+      $this->view('pages/statistique', $data);    }
 
   
 

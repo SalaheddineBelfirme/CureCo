@@ -20,6 +20,36 @@
       return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
+    public function totalprix (){
+      $qury="SELECT SUM(prix) FROM `prodcts`";
+      $stmt= $this->db->query($qury);
+      $stmt->execute();
+      $prix=$stmt->fetchColumn();
+      return $prix;
+    }
+    public function maxprix (){
+      $qury="SELECT MAX(prix) FROM `prodcts`";
+      $stmt= $this->db->query($qury);
+      $stmt->execute();
+      $prix=$stmt->fetchColumn();
+      return $prix;
+    }
+    public function minprix (){
+      $qury="SELECT MIN(prix) FROM `prodcts`";
+      $stmt= $this->db->query($qury);
+      $stmt->execute();
+      $prix=$stmt->fetchColumn();
+      return $prix;
+    }
+    public function NbProudct (){
+      $qury="SELECT COUNT(*) FROM `prodcts`";
+      $stmt= $this->db->query($qury);
+      $stmt->execute();
+      $prix=$stmt->fetchColumn();
+      return $prix;
+    }
+
+
     public function getoneprodct($id){
       $qury="SELECT * FROM `categorie` ,prodcts WHERE categorie.id_c=prodcts.id_category and id_prodct=$id ";
       $stmt= $this->db->query($qury);

@@ -76,10 +76,19 @@ function validateEmail(email) {
         return res.test(password)
         }
 
-        function validatetext(number) {
-            let res =  /[-+]?[0-9]*\.?[0-9]+/;
+        function validatenuber(number) {
+            let res =  /^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/
+            console.log(res.test(number))
             return res.test(number)
             }
+
+            function validateText(text) {
+             if(text!=''){
+              return true
+             }
+             return false
+              }
+  
 
  
 
@@ -122,22 +131,60 @@ function validateEmail(email) {
       }
     
   function validateupdate(event){   
-    let form=document.getElementById("namep")
-    let name=document.getElementById("namep")
+    let formupdate=document.getElementById("formupdate")
+    let name=document.getElementById("namep").value
     let nameER=document.getElementById("namepER")
-    let category=document.getElementById("catgoryp")
+    let category=document.getElementById("catgoryp").value
     let catgoryER=document.getElementById("catgorypER")
-    let prix=document.getElementById("prixp")
+    let prix=document.getElementById("prixp").value
     let prixER=document.getElementById("prixpER")
+
+    event.preventDefault();
+  
+    let bol=true;
+    nameER.innerHTML=""
+    if(validateText(name)){
+      nameER.innerHTML=(name + " is valid");
+      nameER.style.color="blue"
+    }
+    else{
+      nameER.innerHTML=(name + " is not valid");
+      nameER.style.color="red"
+      bol=false;
+    }
+    if(validateText(category)){
+      catgoryER.innerHTML=( " is valid");
+      catgoryER.style.color="blue"
+    }
+    else{
+      catgoryER.innerHTML=( " is not valid");
+      catgoryER.style.color="red"
+      bol=false;
+    }
+    if(validatenuber(prix)){
+      prixER.innerHTML=(prix + " is valid");
+      prixER.style.color="blue"
+     
+    }
+    else  {
+      prixER.innerHTML=(prix + " is not valid");
+      prixER.style.color="red"
+      bol=false;
+
+    }
+    if(bol){
+      formupdate.submit()
+    }
+    else{
+      return false
+    }
+
+
+
     
   }
 
-function chekvalidte(){
 
-    
-    console.log("letsgo")
-
-}
 
 
 // document.addEventListener("DOMContentLoaded",()=>{

@@ -103,10 +103,12 @@ private $category;
 
   public function aupdteproduct()
   {
-    if (isset($_POST['submitupdate'])) {
-
+   
+    // if (isset($_POST['submitupdate'])) {
+    
           if($_FILES["imageadd"]["error"] == 4) {
-            echo "test";
+
+            
             $product = new productM();
             $id_proudct = htmlspecialchars($_POST['id']) ;
             $prix = htmlspecialchars($_POST['prix']);
@@ -119,6 +121,7 @@ private $category;
             } else {
 
               echo $bol;
+              echo"ggggggggggggggg";
               $_SESSION['erourupdateproudct'] = true;
             }
             header("Location: http://localhost/CureCoj/traversymvc/pages/dashboard");
@@ -127,6 +130,7 @@ private $category;
     
       
       else {
+     
         $product = new productM();
         $id_proudct =htmlspecialchars( $_POST['id']);
         $prix = htmlentities($_POST['prix']);
@@ -154,5 +158,5 @@ private $category;
     }
    
   }
-}
+// }
 
