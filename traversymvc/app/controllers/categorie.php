@@ -29,12 +29,7 @@ class categorie extends Controller {
      echo  json_encode($data); 
 
     }
-    public function getoneproudct($id){
-
-      
-
-
-    }
+  
 
   public function deletecategorie($id){
     $cate=new categorieM();

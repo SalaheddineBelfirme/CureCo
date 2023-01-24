@@ -1,8 +1,8 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 <?php require APPROOT . '/views/inc/nav.php'; ?>
-    <div class="container-fluid vh-100">
+    <div class="container-fluid mt-5 vh-100">
       
-        <div class="row d-md-flex justify-content-between  align-items-start">
+        <div class="row d-md-flex justify-content-between mt-5  align-items-start">
             <div id="slide" class="col-md-6">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">

@@ -45,7 +45,7 @@
     }
     public function rechrechproudct($words){
 
-      $stmt= $this->db->query("SELECT * FROM `categorie` ,prodcts WHERE categorie.id_c=prodcts.id_category and leble like %$words%");
+      $stmt= $this->db->query("SELECT * FROM `categorie` ,prodcts WHERE categorie.id_c=prodcts.id_category and prodcts.libelle like '%$words%'");
       $stmt->execute();
      
       return $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -72,14 +72,15 @@
     
     }
 
-    public  function updateproduct($id_product,$id_category,$name,$prix,$image=null){
+    public  function updateproduct($id_product,$id_category,$name,$libelle,$prix,$image=null){
  
 
       if($image==null){
-        $stmt= $this->db->query("UPDATE `prodcts` SET prix=:prix,name=:name,id_category=:id_category WHERE id_prodct=:id_prodct");
+        $stmt= $this->db->query("UPDATE `prodcts` SET prix=:prix,libelle=:libelle,name=:name,id_category=:id_category WHERE id_prodct=:id_prodct");
         $stmt->bindValue(':id_prodct',$id_product,PDO::PARAM_INT);
         $stmt->bindValue(':prix',$prix,PDO::PARAM_STR);
         $stmt->bindValue(':name',$name,PDO::PARAM_STR);
+        $stmt->bindValue(':libelle',$libelle,PDO::PARAM_STR);
         $stmt->bindValue(':id_category',$id_category,PDO::PARAM_INT);
         $stmt->execute();
         if ($stmt->rowCount() > 0) {

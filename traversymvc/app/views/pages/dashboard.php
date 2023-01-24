@@ -12,9 +12,9 @@
     <div  style="    margin: 0px;padding: 0px;" class="row">
         <div style="border: solid;" class="col-2">
             <div>
-                <form class="flex-column  mt-3" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success form-control mt-2" type="submit">Search</button>
+                <form  action="<?php echo URLROOT ?>/product/recherchproudct/ "class="flex-column  mt-3" method="post" role="search">
+                    <input class="form-control me-2" name="serch" type="search" placeholder="Search" aria-label="Search">
+                    <button  name="subserch" class="btn btn-outline-success form-control mt-2" type="submit">Search</button>
                 </form>
 
             </div>
@@ -23,8 +23,8 @@
 
             </div>
         </div>
-        <div style="    margin: 0px;padding: 0px;"  class="col-9">
-            <div style="    margin: 0px;padding: 0px;" class="container">
+        <div style="    margin: 0px;padding: 0px;"  class="col-10">
+            <div style="  margin: 0px;padding: 0px;" class="container">
                 <div   class="row">
                     <div class="col mb-5">
                         <div class="card">
@@ -33,13 +33,13 @@
                                     <i class="fas fa-plus">add proudct</i>
                                 </a>
 
-                                <table id="tdata" style="" class="table table-hover  container">
+                                <table id="tdataa" style="" class="table table-hover  container">
                                     <thead>
                                         <tr>
                                             <td scope="col">Name</td>
+                                            <td style="width:100px"  scope="col">date <span class="decord">[</span> <span class="order"><a href="<?= URLROOT ?>/product/trie/date_dajout/ASC">A</a></span> <span class="decord">|</span> <span class="order"><a href="<?= URLROOT ?>/product/trie/date_dajout/DESC">D</a></span> <span class="decord">]</span></td>
                                             <td scope="col">libelle</td>
-                                            <td scope="col">date <span class="decord">[</span> <span class="order"><a href="<?= URLROOT ?>/product/trie/date/ASC">A</a></span> <span class="decord">|</span> <span class="order"><a href="<?= URLROOT ?>/product/trie/date/DESC">D</a></span> <span class="decord">]</span></td>
-                                            <td scope="col">Prix <span class="decord">[</span> <span class="order"><a href="<?= URLROOT ?>/product/trie/prix/ASC">A</a></span> <span class="decord">|</span> <span class="order"><a href="<?= URLROOT ?>/product/trie/prix/DESC">D</a></span> <span class="decord">]</span></td>
+                                            <td style="width:100px" scope="col">Prix <span class="decord">[</span> <span class="order"><a href="<?= URLROOT ?>/product/trie/prix/ASC">A</a></span> <span class="decord">|</span> <span class="order"><a href="<?= URLROOT ?>/product/trie/prix/DESC">D</a></span> <span class="decord">]</span></td>
                                             <td scope="col">category</td>
                                             <td scope="col">image</td>
                                             <td scope="col">Action</td>
@@ -50,9 +50,8 @@
                                         foreach ($data['product'] as $pr) { ?>
                                             <tr>
                                                 <td scope="row"><?php echo $pr->name ?></td>
-                                                <td scope="row"><?php echo $pr->name ?></td>
-                                                <td scope="row">
-                                                    </ / echo $pr->libelle ?></td>
+                                                <td scope="row"><?php echo $pr->date_dajout ?></td>
+                                                <td scope="row"> <?php echo $pr->libelle ?></td>
                                                 <td scope="row"><?php echo $pr->prix ?>$</td>
                                                 <td scope="row"><?php echo $pr->name_categorie ?>$</td>
                                                 <td scope="row"> <img style="width: 100px ;height: 100px;" id="imgp" src="<?= URLROOT ?>/imgg/<?php echo $pr->image ?>" alt=""></td>
@@ -177,7 +176,7 @@
                     <div class="modal-footer">
                         <button type="button" onclick="AddNewProdct()" class="btn btn-secondary">Add More</button>
 
-                        <button id="btnSubAdd" class="btn bg-primary text-light  " name="submitadd" type="submit">Submit</button>
+                        <button id="btnSubAdd" class="btn bg-primary text-light  "  onclick="vide()" name="submitadd" type="submit">Submit</button>
 
                     </div>
                 </form>
@@ -206,6 +205,8 @@
                     <input type="hidden" name="id" id="id">
                     <input id="namep" name="name" type="text" class="form-control" placeholder="name" aria-label="Username" aria-Dribedby="basic-addon1" required>
                     <span id="namepER"></span>
+                    <input id="libellep" name="libelle" type="text" class="form-control" placeholder="libelle" aria-label="Username" aria-Dribedby="basic-addon1" required>
+
                     <input id="prixp" name="prix" type="text" class="form-control" placeholder="prix" aria-label="Recipient's username" aria-Dribedby="basic-addon2" required>
                     <span id="prixpER"></span>
                     <input accept=".jpg,jpeg,.png" name="imageadd" type="file" class="form-control">
@@ -238,6 +239,7 @@
     function editProduct(id) {
         id_product = document.getElementById("id")
         Name = document.getElementById("namep")
+        libelle = document.getElementById("libellep")
         prix = document.getElementById("prixp")
         categorie = document.getElementById("catgoryp")
         image = document.getElementById("imagep")
@@ -249,6 +251,7 @@
             success: function(result) {
                 const data = result[0];
                 Name.value = data.name
+                libelle.value = data.libelle
                 prix.value = data.prix
                 categorie.value = data.id_category
                 id_product.value = id

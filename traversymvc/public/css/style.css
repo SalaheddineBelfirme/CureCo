@@ -14,7 +14,7 @@
 }
 
 .counter{
-  color: #F14997;
+  color: #65ff5a;
   background: linear-gradient(to right bottom,#fff 50%, #f9f9f9 51%);
   font-family: 'Comfortaa', cursive;
   text-align: center;
@@ -37,18 +37,18 @@
 }
 .counter .counter-value{
   color: #fff;
-  background: linear-gradient(to right bottom, #FD8ED2, #F14997);
+  background: linear-gradient(to right bottom, #65ff5a, #65ff5a);
   font-size: 40px;
   font-weight: 700;
   line-height: 40px;
   padding: 7px 0 3px;
   display: block;
 }
-.counter.blue{ color: #0092CD; }
+.counter.blue{ color: #65ff5a; }
 .counter.blue .counter-value{ background: linear-gradient(to right bottom, #06BBF4, #0092CD); }
-.counter.orange{ color: #FB9A00; }
+.counter.orange{ color: #65ff5a; }
 .counter.orange .counter-value{ background: linear-gradient(to right bottom, #FCCA09, #FB9A00); }
-.counter.green{ color: #03BFB0; }
+.counter.green{ color: #65ff5a; }
 .counter.green .counter-value{ background: linear-gradient(to right bottom, #00E2CD, #03BFB0); }
 @media screen and (max-width:990px){
   .counter{ margin-bottom: 40px; }

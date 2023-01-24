@@ -3,14 +3,14 @@
 // const menubtn = document.querySelector("#menu-btn");
 // const navbar = document.querySelector(".header .navbar");
 
+function vide(){
+  let  modle=document.getElementById("modleadd")
+  modle.innerHTML = "";
+}
 
 function AddNewProdct(){
-
- 
-
  let  modle=document.getElementById("modleadd")
  let  NbProudct=document.getElementById("nbprodct")
- console.log(NbProudct);
 
 
 let nb=parseInt(NbProudct.value) +1

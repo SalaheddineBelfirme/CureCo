@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 21 jan. 2023 à 17:59
+-- Généré le : mar. 24 jan. 2023 à 02:38
 -- Version du serveur : 10.4.25-MariaDB
--- Version de PHP : 8.1.10
+-- Version de PHP : 8.0.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,8 +37,9 @@ CREATE TABLE `categorie` (
 --
 
 INSERT INTO `categorie` (`id_c`, `name_categorie`) VALUES
-(12, 'dewa ras'),
-(13, 'dewa ma3da');
+(15, 'Head pain'),
+(17, 'Médicaments'),
+(18, 'Diabetes');
 
 -- --------------------------------------------------------
 
@@ -51,15 +52,19 @@ CREATE TABLE `prodcts` (
   `prix` int(11) NOT NULL,
   `image` varchar(100) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `id_category` int(11) NOT NULL
+  `id_category` int(11) NOT NULL,
+  `date_dajout` date NOT NULL,
+  `libelle` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `prodcts`
 --
 
-INSERT INTO `prodcts` (`id_prodct`, `prix`, `image`, `name`, `id_category`) VALUES
-(12, 23, '63caf80b95337.png', 'pomdaaa', 12);
+INSERT INTO `prodcts` (`id_prodct`, `prix`, `image`, `name`, `id_category`, `date_dajout`, `libelle`) VALUES
+(20, 22, '63cf1c2b166ef.jpg', 'Médicaments', 15, '2023-01-24', 'Ce livre est destiné aux étudiants en pharmacie'),
+(21, 40, '63cf23a247f2b.jpg', 'Magnien', 15, '2023-01-24', 'Magnien Medidose Classic Weekly Pills '),
+(23, 34, '63cf284f08801.png', 'Broché', 17, '2023-01-24', ' ceux désireux de préparer le concours de ');
 
 -- --------------------------------------------------------
 
@@ -132,13 +137,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `categorie`
 --
 ALTER TABLE `categorie`
-  MODIFY `id_c` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_c` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT pour la table `prodcts`
 --
 ALTER TABLE `prodcts`
-  MODIFY `id_prodct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_prodct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT pour la table `users`

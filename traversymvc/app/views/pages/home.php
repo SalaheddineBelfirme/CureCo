@@ -11,7 +11,7 @@
                 <u>Bootstrapious</u>
             </a>
         </p>
-        <a href="#" role="button" class="btn btn-primary px-5">See All Features</a>
+        <a href="#"  style="background-color:#65ff5a" role="button" class="btn btn-success px-5">See All Features</a>
     </div>
 </div>
 

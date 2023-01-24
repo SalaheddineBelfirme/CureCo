@@ -6,13 +6,10 @@ class login extends Controller {
 
     public function __construct(){
         $this->postModel = $this->model('loginM');
-        
     }
 
     public function loginn(){
-
         if(isset ($_POST['log'])){
-
         }
 
         $email=$_POST['email'];
@@ -41,14 +38,7 @@ class login extends Controller {
             
        }
 
-    //    elseif($r[0]->role==0) {
-    //     $name=$r[0]->Nom;
-    //     echo("<script> var na='  $name'; alert('welcome Sir  '+na)</script>");
-    //     echo $r[0]->role;
-    //     die;
-    //     header("Location: http://localhost/CureCoj/traversymvc/pages/croisiere");
-
-    //    }
+   
        
 
     }
