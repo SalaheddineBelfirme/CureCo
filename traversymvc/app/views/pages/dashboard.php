@@ -1,5 +1,5 @@
 <?php require APPROOT . '/views/inc/header.php';
-// require  APPROOT . '/controllers/Croisiere.php ';
+
 
 
 
@@ -94,7 +94,7 @@
                     <div style="margin-top: 8%; padding: 0px !important;" class="col mb-5">
                         <div class="card">
                             <div class="card-body bg-light" style="overflow: auto;">
-                                <a data-bs-toggle="modal" data-bs-target="#port" data-bs-whatever="@mdo">
+                                <a data-bs-toggle="modal" data-bs-target="#ct" data-bs-whatever="@mdo">
                                     <i class="fas fa-plus"></i>
                                     <h5>add categorie</h5>
                                 </a>
@@ -166,7 +166,7 @@
                     <input name="name[]" type="text" class="form-control name"  placeholder="name" aria-label="Username" aria-Dribedby="basic-addon1" >
                     <input name="libelle[]" type="text" class="form-control libelle" placeholder="libelle" aria-label="Username" aria-Dribedby="basic-addon1">
                     <input name="prix[]" type="text" class="form-control prix" placeholder="prix" aria-label="Recipient's username" aria-Dribedby="basic-addon2" >
-                    <input accept=".jpg,jpeg,.png" name="imageadd[]" type="file" class="form-contro imageaddl" >
+                    <input accept=".jpg,jpeg,.png" name="imageadd[]" type="file" class="form-contro imageadd" >
                     <select name="category[]" class="form-select category" aria-label="Default select example" >
                         <option value="0" selected>Categorie </option>
                         <?php foreach ($data['categorie'] as $row) { ?>
@@ -267,7 +267,7 @@
 
 
 
-<div class="modal fade" id="port" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="ct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 
 
@@ -303,3 +303,6 @@
             $('#tdata').DataTable();
         });
     </script>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+

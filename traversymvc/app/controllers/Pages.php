@@ -32,8 +32,7 @@ session_start();
         if( ($_SESSION['log'][0]->role==1 ) ){
   
           return "logout";
-        }
-        
+        } 
       }
       else {
         return "login";
@@ -49,8 +48,9 @@ session_start();
       $this->view('pages/index', $data);
     }
     public function home(){
+      $product=$this->postModel->getallprodact();
       $data = [
-        'title' => 'home Us'
+        'proudct' => $product
       ];
 
       $this->view('pages/home', $data);
@@ -73,13 +73,7 @@ session_start();
     }
 
 
-    public function contact(){
-      $data = [
-        'title' => 'contact'
-      ];
-
-      $this->view('pages/contact', $data);
-    }
+   
 
     public function statistique (){
      $nbproudct= $this->postModel->NbProudct();
@@ -97,9 +91,6 @@ session_start();
       $this->view('pages/statistique', $data);    }
 
   
-
-
-
  
 
     public function dashboard(){

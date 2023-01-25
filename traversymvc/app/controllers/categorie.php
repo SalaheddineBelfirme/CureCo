@@ -25,8 +25,8 @@ class categorie extends Controller {
     public function getcategorie(){
       $ct=new categorieM();
     $data= $ct->getcategory();
-     header('Content-Type: application/json');
-     echo  json_encode($data); 
+     header('Content-type: application/json');
+     echo  json_encode($data);  
 
     }
   

@@ -6,7 +6,7 @@ require_once '../app/controllers/Pages.php';
 
 
 ?>
-<nav style="position: unset;" class="navbar navbar-expand-lg bg-dark navbar-light  px-4 px-lg-5 " >
+<nav style="position: unset;" class="navbar navbar-expand-lg bg-light navbar-light  px-4 px-lg-5 " >
             <a href="" class="navbar-brand p-0">
                 <!-- <h1 class="text-primary m-0"><i class="fa fa-map-marker-alt me-3"></i>Tourist</h1> -->
                 <img src=" <?php echo URLROOT?>/public/imgg/phrmace-logo.png" alt="Logo">
@@ -16,8 +16,8 @@ require_once '../app/controllers/Pages.php';
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a style="color:#65ff5a"  href="<?=URLROOT ?>/pages/home" class="nav-item text-success nav-link ">Home</a>
-                    <a style="display:<?php echo Pages::test();?>" href="<?=URLROOT ?>/pages/dashboard" class="nav-item text-success nav-link">dashboard</a>
+                    <a style="color:#65ff5a !important; "  href="<?=URLROOT ?>/pages/home" class="nav-item nav-link ">Home</a>
+                    <a style="display:<?php echo Pages::test();?> ;color:#65ff5a !important" href="<?=URLROOT ?>/pages/dashboard" class="nav-item text-success nav-link active">dashboard</a>
                 </div>
                     <!-- <a href="contact"   class="nav-item text-success nav-link ">Contact</a> -->
                 </div>
