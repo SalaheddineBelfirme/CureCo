@@ -73,7 +73,7 @@ private $category;
   public function addprudct()
   {
   
-    if (isset($_POST['submitadd'])) {
+    // if (isset($_POST['submitadd'])) {
      
       
       $product = new productM();
@@ -98,7 +98,7 @@ private $category;
         echo $bol;
         $_SESSION['erouraddproudct'] = true;
       }
-    }
+    // }
   }
 
   public function aupdteproduct()

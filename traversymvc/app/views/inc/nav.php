@@ -9,7 +9,7 @@ require_once '../app/controllers/Pages.php';
 <nav style="position: unset;" class="navbar navbar-expand-lg bg-dark navbar-light  px-4 px-lg-5 " >
             <a href="" class="navbar-brand p-0">
                 <!-- <h1 class="text-primary m-0"><i class="fa fa-map-marker-alt me-3"></i>Tourist</h1> -->
-                <img src=" <?php echo URLROOT?>/public/imgg/logo-removebg-preview.png" alt="Logo">
+                <img src=" <?php echo URLROOT?>/public/imgg/phrmace-logo.png" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>

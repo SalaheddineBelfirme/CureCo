@@ -161,21 +161,18 @@
             </div>
             <div class="modal-body">
 
-                <form action="<?php echo URLROOT ?>/product/addprudct" class="d-flex flex-column gap-3" enctype="multipart/form-data" method="POST">
+                <form id="FormAdd" action="<?php echo URLROOT ?>/product/addprudct" class="d-flex flex-column gap-3" enctype="multipart/form-data" method="POST">
                     <input id="nbprodct" type="text" value="1">
-                    <input name="name[]" type="text" class="form-control" placeholder="name" aria-label="Username" aria-Dribedby="basic-addon1" required>
-                    <input name="libelle[]" type="text" class="form-control" placeholder="libelle" aria-label="Username" aria-Dribedby="basic-addon1">
-                    <input name="prix[]" type="text" class="form-control" placeholder="prix" aria-label="Recipient's username" aria-Dribedby="basic-addon2" required>
-                    <input accept=".jpg,jpeg,.png" name="imageadd[]" type="file" class="form-control" required>
-                    <select name="category[]" class="form-select" aria-label="Default select example" required>
-                        <option selected>Categorie </option>
+                    <input name="name[]" type="text" class="form-control name"  placeholder="name" aria-label="Username" aria-Dribedby="basic-addon1" >
+                    <input name="libelle[]" type="text" class="form-control libelle" placeholder="libelle" aria-label="Username" aria-Dribedby="basic-addon1">
+                    <input name="prix[]" type="text" class="form-control prix" placeholder="prix" aria-label="Recipient's username" aria-Dribedby="basic-addon2" >
+                    <input accept=".jpg,jpeg,.png" name="imageadd[]" type="file" class="form-contro imageaddl" >
+                    <select name="category[]" class="form-select category" aria-label="Default select example" >
+                        <option value="0" selected>Categorie </option>
                         <?php foreach ($data['categorie'] as $row) { ?>
                             <option value="<?php echo $row->id_c ?>"><?php echo $row->name_categorie ?></option>
                         <?php } ?>
                     </select>
-
-
-
 
                     <div id="modleadd">
 
@@ -185,7 +182,7 @@
                     <div class="modal-footer">
                         <button type="button" onclick="AddNewProdct()" class="btn btn-secondary">Add More</button>
 
-                        <button id="btnSubAdd" class="btn bg-primary text-light  " onclick="vide()" name="submitadd" type="submit">Submit</button>
+                        <button id="btnSubAdd" class="btn bg-primary text-light  " onclick="Save(event)" name="submitadd" type="submit">Submit</button>
 
                     </div>
                 </form>
@@ -220,7 +217,7 @@
                     <span id="prixpER"></span>
                     <input accept=".jpg,jpeg,.png" name="imageadd" type="file" class="form-control">
                     <select id="catgoryp" name="category" class="form-select" aria-label="Default select example" >
-                        <option selected>Categorie </option>
+                        <option value="0" selected>Categorie </option>
                         <?php foreach ($data['categorie'] as $row) { ?>
                             <option value="<?php echo $row->id_c ?>"><?php echo $row->name_categorie ?></option>
                         <?php } ?>
@@ -230,7 +227,6 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
                 <button id="btnSubAdd" class="btn bg-primary text-light  " onclick="validateupdate(event)" name="submitupdate" type="submit">Submit</button>
 
             </div>
@@ -278,7 +274,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">New port</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">New Categorie</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -287,14 +283,11 @@
                 <form method="POST" action="<?php echo URLROOT ?>/categorie/add_categorie" style="width: 50%; margin: auto; margin-top: 10%;" class="was-validated">
 
                     <div class="mb-3">
-                        <input type="text" placeholder="Name" name="namecategorie" class="form-control" aria-label="file example" required>
+                        <input type="text" placeholder="Name Categorie" name="namecategorie" class="form-control" aria-label="file example" required>
                     </div>
+                 
                     <div class="mb-3">
-                        <input type="text" placeholder="point_depart" name="pays" class="form-control" aria-label="file example" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <button type="submit" name="sub_addport" class="btn btn-primary" required> ajoute port</button>
+                        <button type="submit" name="sub_addport" class="btn btn-primary" required> ajoute Categorie</button>
                     </div>
                 </form>
 
