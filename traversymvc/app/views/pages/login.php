@@ -7,13 +7,13 @@
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <img src="<?php echo URLROOT ?>/public/imgg/Contact us-amico.png" class="d-block w-100" alt="...">
+                        <img src="<?php echo URLROOT ?>/public/imgg/lrb.png" class="d-block w-100" alt="...">
                       </div>
                       <div class="carousel-item">
-                        <img src="<?php echo URLROOT ?>/public/imgg/Contact us-bro.png" class="d-block w-100" alt="...">
+                        <img src="<?php echo URLROOT ?>/public/imgg/logrb.png" class="d-block w-100" alt="...">
                       </div>
                       <div class="carousel-item">
-                        <img src="<?php echo URLROOT ?>/public/imgg/Contact us-pana.png" class="d-block w-100" alt="...">
+                        <img src="<?php echo URLROOT ?>/public/imgg/logrb1.png" class="d-block w-100" alt="...">
                       </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -31,7 +31,7 @@
                         <div class="row d-flex justify-content-center align-items-center">
                             <img  id="imge_logi" class="w-25 d-flex-column justify-content-center " src="./imgg/logo-removebg-preview.png" alt="" >
                     
-                            <h4 class=" bg-white text-center text-primary px-3">Hello agine</h4>
+                            <h4  style="color:#65ff5a ; "  class="  text-center  px-3">Hello agine</h4>
                             <p style="font-size: small  w-75 ;" class="text-muted text-center ">Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Culpa, nihil quae maiores, iste nostrum laboriosam voluptas totam quis</p>
 
@@ -44,12 +44,12 @@
                                 <span id='paswordER'></span>
                             </div>
                     
-                            <button type="submit" name="log" class="form-control btn btn-primary w-75 mb-4 "  onclick="validate(event)" >Submit</button>
+                            <button  style="background-color:#65ff5a" type="submit" name="log" class="form-control btn btn-primary w-75 mb-4 "  onclick="validate(event)" >Submit</button>
                      
                         </div>
 
                         <p style="font-size: small   w-75;" class="text-muted text-center ">Lorem ipsum dolor sit amet consectetur jhsjhsskms
-                            adipisicing elit. Culpa, nihil quae maiores, iste nostrum <a href="signin">sgin up</a></p>
+                            adipisicing elit. Culpa, nihil quae maiores, iste nostrum 
                   
                 </form>
 

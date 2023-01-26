@@ -64,7 +64,7 @@
  
         </div> 
       </div>
-      <a href="#" id="btn" class="text-decoration-none text-white border p-2 rounded-4"
+      <a  href="<?php echo URLROOT ?>/Pages/dashboard" id="btn" class="text-decoration-none text-white border p-2 rounded-4"
         style="background-color: #65ff5a ; width: 150px">See more</a>
     </div>
   </div>
@@ -73,7 +73,7 @@
 <div class="row d-flex flex-column align-items-center text-center">
       <div class="col-md-6 col-8">
         <div class="text-box text-center">
-          <h3>Our time</h3>
+          <h3>Our Category</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
             omnis numquam ullam praesentium vitae sed architecto. Rerum
