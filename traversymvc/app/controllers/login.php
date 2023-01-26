@@ -14,6 +14,7 @@ class login extends Controller {
 
         $email=$_POST['email'];
         $pass=md5($_POST['pass']);
+      
         
 
        $r=$this->postModel->checklogin($email,$pass);

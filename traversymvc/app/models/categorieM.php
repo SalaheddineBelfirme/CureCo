@@ -5,14 +5,20 @@
        $this->db = new Database;
     }
 
-    public function getcategory(){
-        $stmt= $this->db->query("SELECT * FROM categorie ");
+    public function getcategory($limit=null){
+      $query="SELECT * FROM categorie ";
+      if($limit!=null){
+        $query=sprintf("SELECT * FROM categorie %s",$limit);
+      }
+     
+        $stmt= $this->db->query($query);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_OBJ);
-      
-          //return $this->db->resultSet();
     
     }
+
+
+
     public function deletecategory($id){
             $stmt= $this->db->query("DELETE  FROM categorie where id_c =$id ");
             $stmt->execute();

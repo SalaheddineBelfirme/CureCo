@@ -22,7 +22,7 @@
                         <button name="subserch"  class="btn btn-outline-success " type="submit">Search</button>
                     </form>
                     <form action="<?php echo URLROOT ?>/Pages/statistique" method="post">
-                    <button type="submit" class="btn btn-success">statstic</button>
+                    <button type="submit"  style="background-color:#65ff5a" class="mb-2 btn btn">statstic</button>
                     </form>
                   
 
@@ -72,7 +72,7 @@
                                                     </form>
 
 
-                                                    <a id="updateprodact" style="margin-left: 10px;" class="btn btn-success" onclick="editProduct(<?php echo $pr->id_prodct ?>)" data-bs-toggle="modal" data-bs-target="#crupdate" data-bs-whatever="@mdo"><i class="fa fa-edit"></i></a>
+                                                    <a id="updateprodact" style="margin-left: 10px;background-color:#65ff5a" class="btn btn" onclick="editProduct(<?php echo $pr->id_prodct ?>)" data-bs-toggle="modal" data-bs-target="#crupdate" data-bs-whatever="@mdo"><i class="fa fa-edit"></i></a>
 
 
 

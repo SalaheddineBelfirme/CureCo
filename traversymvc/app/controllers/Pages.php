@@ -48,9 +48,11 @@ session_start();
       $this->view('pages/index', $data);
     }
     public function home(){
-      $product=$this->postModel->getallprodact();
+      $product=$this->postModel->getallprodact("LIMIT 3");
+      $category=$this->category->getcategory(" LIMIT 3");
       $data = [
-        'proudct' => $product
+        'proudct' => $product,
+        'category'=>$category
       ];
 
       $this->view('pages/home', $data);
@@ -70,6 +72,7 @@ session_start();
     public function logout(){
       session_destroy();
       $this->view('pages/login');
+
     }
 
 
@@ -98,12 +101,6 @@ session_start();
       if( ($_SESSION['log'][0]->role==1 ) ){
         $product=$this->postModel->getallprodact();
         $category=$this->category->getcategory();
-       
-        // $datanavier= $this->navire->getnavier();
-        // $dataPort=$this->Port->getPORT();
-   
-       
-
         $data = [
           'product' => $product,
           'categorie'=> $category,

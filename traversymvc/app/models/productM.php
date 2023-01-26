@@ -13,12 +13,21 @@
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
-    public function getallprodact (){
+    public function getallprodact ($limit=null){
       $qury="SELECT * FROM `categorie` ,prodcts WHERE categorie.id_c=prodcts.id_category";
+      if($limit!=null){
+        $qury=sprintf("SELECT * FROM `categorie` ,prodcts WHERE categorie.id_c=prodcts.id_category %s",$limit);
+      }
       $stmt= $this->db->query($qury);
       $stmt->execute();
       return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
+    // public function getallprodactHome (){
+    //   $qury="SELECT * FROM `categorie` ,prodcts WHERE categorie.id_c=prodcts.id_category LIMIT 3";
+    //   $stmt= $this->db->query($qury);
+    //   $stmt->execute();
+    //   return $stmt->fetchAll(PDO::FETCH_OBJ);
+    // }
 
     public function totalprix (){
       $qury="SELECT SUM(prix) FROM `prodcts`";

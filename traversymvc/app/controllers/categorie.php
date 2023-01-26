@@ -45,10 +45,4 @@ class categorie extends Controller {
   }
 
 }
-
-
-
-
-
-
  ?>
