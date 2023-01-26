@@ -49,6 +49,7 @@
 </div>
 
 <canvas id="myChart" ></canvas>
+<!-- <?php //require  APPROOT . '/views/inc/footer.php'; ?> -->
 
 
 
@@ -84,4 +85,3 @@ var myChart =new CharacterData (
 
 
 
-<?php require APPROOT . '/views/inc/footer.php'; ?>
